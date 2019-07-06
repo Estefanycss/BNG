@@ -150,15 +150,11 @@ def prob_condicional(set_test, cant_clases, pcc, prob_previa, clases_set_test):
 
 # Curvas ROC
 def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
-    # https://stackoverflow.com/questions/50941223/plotting-roc-curve-with-multiple-classes
-    # http://benalexkeen.com/scoring-classifier-models-using-scikit-learn/
     matrix_confusion = confusion_matrix(clases_set_test, prediccion)
     print('\n---------------------------------------------------------------------------------------------------\n'
           'Matriz de confusión'
           '\n---------------------------------\n',
           matrix_confusion)
-    # plt.style.use('ggplot')
-    # Compute ROC curve and ROC AUC for each class
 
     y_test = np.zeros((len(clases_set_test), cant_clases))
     for i in range(0, len(clases_set_test)):
